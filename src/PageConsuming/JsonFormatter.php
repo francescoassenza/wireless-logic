@@ -10,6 +10,6 @@ class JsonFormatter extends WebPageConsumer implements Formatter
     {
         $arrayData = $this->mediator->scrapeHtml($url);
 
-        return json_encode($arrayData, JSON_PRETTY_PRINT);
+        return json_encode($arrayData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     }
 }
